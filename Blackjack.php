@@ -5,14 +5,19 @@ class Blackjack {
     private $dealer;
     private $deck;
 
+    function __construct() {
+        $this->deck = new Deck();
+        $this->deck->shuffle();
+        $this->player = new Player($this->deck);
+        $this->dealer = new Dealer($this->deck);
+    }   
+
     public function getPlayer() {
         return $this->player;
-        $this->player = new Blackjack();
     }
 
     public function getDealer() {
         return $this->dealer;
-        $this->dealer = new Blackjack();
     }
 
     public function getDeck() {

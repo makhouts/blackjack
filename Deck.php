@@ -41,3 +41,5 @@ class Deck
         return array_shift($this->cards);
     }
 }
+
+$obj = new Deck();
