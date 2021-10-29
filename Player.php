@@ -10,20 +10,29 @@ class Player {
         }
     }
 
-    public function hit() {
-
+    public function hit($deck){
+        $this->cards[]= $deck->drawCard();
+        $score = $this->getScore();
+        if($score<=21){
+            $this->lost =true;
+        }
     }
 
     public function surrender() {
+        $this->lost = true;
 
     }
 
     public function getScore() {
-
+        $score = 0;
+        foreach($this->cards as $card) {
+            $score += $card->getvalue();
+        }
+        return $this->score;
     }
 
     public function hasLost() {
-
+        $this->lost = lost;
     }
 
 };
